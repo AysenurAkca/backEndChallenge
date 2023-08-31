@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#container{
+    width: 80%;
+    margin: auto;
+    
+}
+
+#header{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+   
+}
+#articles{
+    width: 80%;
+    margin: auto;
+}
+
+#articles a{
+    text-decoration: none;
+    color: black;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <link rel="stylesheet" href="detailsStyle.css">
+        <title>Details | <%= selectedArticle.title %>
+        </title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            #container {
+                width: 60%;
+                margin:20px auto;
+            }
+            #edit-delete-btn{
+                display: flex;
+                gap: 30px
+            }
+
+        </style>
+</head>
+
+<body>
+    <div id="container">
+        <form action="/">
+            <button class="btn btn-danger">Back</button>
+        </form>
+        <div id="details">
+            <h1>
+                <%= selectedArticle.title %>
+            </h1>
+            <p>
+                <%= selectedArticle.article %>
+            </p>
+        </div>
+        <div id="edit-delete-btn">
+            <form action="/articles/<%= selectedArticle._id %>/edit">
+                <button class="btn btn-primary">Edit Article</button>
+            </form>
+
+            <form action="/articles/<%= selectedArticle._id %>/delete" method="post">
+                <button class="btn btn-primary">Delete Article</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

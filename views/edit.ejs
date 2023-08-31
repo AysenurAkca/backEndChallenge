@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #form-sec {
+            width: 60%;
+            margin: auto;
+            margin-top: 25px;
+        }
+
+        #title,
+        #article {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 5px 10px;
+
+        }
+
+        .form-label {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+    <title>Edit Article</title>
+</head>
+
+<body>
+    
+    <div id="form-sec">
+        <form action="/">
+            <button class="btn btn-danger">Back</button>
+        </form>
+        <form action="/articles/<%= editArticle._id %>/update" method="post">
+            <p><label for="title" class="form-label">Title:</label></p>
+            <input type="text" name="title" id="title" value="<%= editArticle.title %>">
+            <p><label for="article" class="form-label">Article:</label></p>
+            <textarea name="article" id="article" cols="60" rows="10"><%= editArticle.article %></textarea>
+            <button class="btn btn-primary">Update</button>
+        </form>
+    </div>
+</body>
+
+</html>

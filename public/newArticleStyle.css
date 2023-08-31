@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container{
+    width: 80%;
+    margin: auto;
+}
+
+#header{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+   
+}
+#form-sec{
+    width: 60%;
+    margin: auto;
+}
+
+#title, #article{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    
+}
+.form-label{
+    font-size: 20px;
+    font-weight: bold;
+}

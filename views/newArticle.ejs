@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <link rel="stylesheet" href="newArticleStyle.css">
+        <title>Add New Article</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            #container {
+                width: 80%;
+                margin: auto;
+            }
+
+            #header {
+                display: flex;
+                justify-content: space-around;
+                padding: 20px;
+
+            }
+
+            #form-sec {
+                width: 60%;
+                margin: auto;
+            }
+
+            #title,
+            #article {
+                width: 100%;
+                margin-bottom: 20px;
+                padding: 5px 10px;
+
+            }
+
+            .form-label {
+                font-size: 20px;
+                font-weight: bold;
+            }
+        </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>New Article</h1>
+            <form action="/">
+                <button class="btn btn-danger">Back</button>
+            </form>
+        </div>
+        <div id="form-sec">
+            <form action="/add-new-article" method="post">
+                <p><label for="title" class="form-label">Title:</label></p>
+                <input type="text" name="title" id="title" >
+                <p><label for="article" class="form-label">Article:</label></p>
+                <textarea name="article" id="article" cols="60" rows="10" ></textarea>
+                <button class="btn btn-primary">Add Article</button>
+            </form>
+            <% if(err){ %>
+                <%= err %>
+            <% } %>
+        </div>
+        
+    </div>
+</body>
+
+</html>

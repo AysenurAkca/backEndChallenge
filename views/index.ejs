@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="indexStyle.css">
+    <title>Main Page</title>
+</head>
+<body>
+   
+
+    <div id="container">
+        <div id="header">
+            <h1>The New York Times</h1>
+            <form action="/new/article">
+                <button class="btn btn-primary">Add new article</button>
+            </form>
+            
+        </div>
+        <div id="articles">
+            
+            <% if(articles.length<0){ %>
+                <p>There is no any articles to display</p>
+            <% } else{ %>
+                <% articles.forEach(article => { %>
+                    <h2><a href="/articles/<%= article._id %>/detail"><%= article.title %></a></h2>
+                    <p><%= article.article %></p>
+                <% }) %>
+            <% } %>
+            
+        </div>
+    </div>
+    
+    
+</body>
+</html>
